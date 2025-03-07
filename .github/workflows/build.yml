@@ -54,7 +54,7 @@ jobs:
           channel: ${{ matrix.channel }}
           default: true
           profile: minimal
-      - name: cargo test
+      - name: cargo test (linux, macos)
         if: matrix.os != 'windows-latest'
         run: |
           if [ -f "Cargo.lock" ]; then
@@ -62,7 +62,7 @@ jobs:
           else
             cargo test --all
           fi
-      - name: cargo test
+      - name: cargo test (windows)
         if: matrix.os == 'windows-latest'
         run: |
           # Windows PowerShell is a disaster
