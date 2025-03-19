@@ -17,8 +17,6 @@ runs:
     - name: setup | rust
       uses: dtolnay/rust-toolchain@stable
       with:
-        default: true
-        profile: minimal
         components: clippy, rustfmt
         toolchain: ${{ inputs.channel }}
     - name: setup cache
